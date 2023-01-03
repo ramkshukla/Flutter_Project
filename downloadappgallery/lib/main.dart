@@ -42,17 +42,17 @@ class _MyHomePageState extends State<MyHomePage> {
           directory = await getExternalStorageDirectory();
           String newPath = "";
           print(directory);
-          List<String> paths = directory!.path.split("/");
-          for (int x = 1; x < paths.length; x++) {
-            String folder = paths[x];
-            if (folder != "Android") {
-              newPath += "/" + folder;
-            } else {
-              break;
-            }
-          }
-          newPath = newPath + "/RPSApp";
-          directory = Directory(newPath);
+          // List<String> paths = directory!.path.split("/");
+          // for (int x = 1; x < paths.length; x++) {
+          //   String folder = paths[x];
+          //   if (folder != "Android") {
+          //     newPath += "/" + folder;
+          //   } else {
+          //     break;
+          //   }
+          // }
+          // newPath = newPath + "/RPSApp";
+          directory = Directory(directory!.path);
         } else {
           return false;
         }
